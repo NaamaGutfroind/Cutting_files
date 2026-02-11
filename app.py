@@ -25,7 +25,7 @@ if uploaded_file:
     
     if st.button("בצע חיתוך"):
         try:
-            with st.spinner("חותר את הקובץ... רק רגע..."):
+            with st.spinner("חותך את הקובץ... רק רגע..."):
                 audio = AudioSegment.from_file(uploaded_file)
                 part_length = len(audio) // num_parts
                 
@@ -44,3 +44,4 @@ if uploaded_file:
                 st.download_button("⬇️ הורד את כל החלקים (ZIP)", zip_buffer.getvalue(), "audio_parts.zip")
         except Exception as e:
             st.error(f"שגיאה בעיבוד: {e}")
+
